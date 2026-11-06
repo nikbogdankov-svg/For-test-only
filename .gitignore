@@ -3,3 +3,4 @@ blog.db
 .env
 .env.local
 .neon
+dist/

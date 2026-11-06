@@ -2,7 +2,7 @@
 
 A small full-stack site: write posts, comment on them and like them.
 
-- **Frontend** — plain HTML/CSS/JS in `public/`
+- **Frontend** — React 19 + React Router, built with Vite, in `client/`
 - **Backend** — Node.js + Express JSON API in `server.js`
 - **Database** — either of two, picked in `db.js`:
   - **Online Postgres** (e.g. Neon) when `DATABASE_URL` is set in `.env` / `.env.local` — `db-postgres.js`
@@ -16,10 +16,36 @@ Requires Node.js 22.13+.
 
 ```bash
 npm install
-npm start
+npm run dev        # development: http://localhost:3000, React reloads live as you edit
 ```
 
-Open http://localhost:3000. Data is saved to `blog.db`; delete that file to start fresh.
+For production:
+
+```bash
+npm run build      # compiles the React app into dist/
+npm start          # serves dist/ and the API
+```
+
+To start over with an empty local database, delete `blog.db`.
+
+## Project layout
+
+```
+server.js            Express: API routes + serves the React app
+db.js                picks Postgres or SQLite, seeds example posts
+db-postgres.js       Postgres queries
+db-sqlite.js         SQLite queries
+vite.config.js       Vite build settings
+client/
+  index.html
+  src/
+    main.jsx         React entry point + router
+    App.jsx          header and routes
+    api.js           calls to the backend API
+    utils.js         date formatting, data-loading and saved-name hooks
+    pages/           PostList, PostPage (with comments), NewPost
+    styles.css
+```
 
 ## API
 

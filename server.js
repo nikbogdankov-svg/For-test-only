@@ -1,12 +1,15 @@
-// Backend: Express server exposing a small JSON API and serving the frontend from /public.
+// Backend: Express server exposing a small JSON API and serving the React frontend.
+import http from 'node:http';
+import path from 'node:path';
 import express from 'express';
 import db from './db.js';
 
 const app = express();
+const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
+const isProduction = process.env.NODE_ENV === 'production';
 
 app.use(express.json());
-app.use(express.static('public'));
 
 // Validate a required text field; returns the trimmed value or null.
 function text(value, max) {
@@ -75,6 +78,26 @@ app.post('/api/posts/:id/comments', handle(async (req, res) => {
   res.status(201).json(await db.createComment(post.id, author, body));
 }));
 
-app.listen(PORT, () => {
-  console.log(`Mini Blog running at http://localhost:${PORT} — database: ${db.name}`);
+// Unknown /api routes get a JSON 404 rather than the React page.
+app.use('/api', (req, res) => res.status(404).json({ error: 'Not found' }));
+
+// --- Frontend ------------------------------------------------------------
+if (isProduction) {
+  // Serve the built React app (run `npm run build` first); every other URL gets index.html.
+  const dist = path.resolve('dist');
+  app.use(express.static(dist));
+  app.get('*', (req, res) => res.sendFile(path.join(dist, 'index.html')));
+} else {
+  // Development: Vite compiles the React code on the fly and live-reloads the browser.
+  const { createServer } = await import('vite');
+  const vite = await createServer({
+    server: { middlewareMode: true, hmr: { server } },
+    appType: 'spa',
+  });
+  app.use(vite.middlewares);
+}
+
+server.listen(PORT, () => {
+  const mode = isProduction ? 'production' : 'development';
+  console.log(`Mini Blog running at http://localhost:${PORT} (${mode}) — database: ${db.name}`);
 });
