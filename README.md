@@ -43,9 +43,30 @@ client/
     App.jsx          header and routes
     api.js           calls to the backend API
     utils.js         date formatting, data-loading and saved-name hooks
-    pages/           PostList, PostPage (with comments), NewPost
-    styles.css
+    pages/           PostList, PostPage, NewPost — composed from the components below
+    components/
+      ui/            reusable building blocks, each with its own CSS:
+                     Button, Input, Textarea, Field, Card, Heading, Text, Meta,
+                     ErrorMessage, Container, Stack
+      SiteHeader, PostCard, Comment (+ CommentForm), BackLink
+    styles/
+      tokens.css     design tokens: colors, fonts, font sizes, line heights,
+                     spacing, border radius, shadows — change the look here
+      base.css       page-wide defaults
 ```
+
+### Styling
+
+Never hard-code sizes or colors; use the tokens from `styles/tokens.css`:
+
+```css
+padding: var(--space-4);          /* 16px — spacing scale 1–16 on a 4px grid */
+font-size: var(--text-lg);        /* xs, sm, base, lg, xl, 2xl, 3xl */
+border-radius: var(--radius-lg);  /* sm, md, lg, xl, full */
+color: var(--color-text-muted);
+```
+
+The names follow Tailwind's scale, so `text-3xl` in a design tool is `--text-3xl` here.
 
 ## API
 

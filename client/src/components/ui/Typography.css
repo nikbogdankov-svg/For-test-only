@@ -1,0 +1,16 @@
+.heading { color: var(--color-text); font-weight: var(--weight-bold); line-height: var(--leading-tight); }
+.heading a { color: inherit; }
+
+.heading--base { font-size: var(--text-base); }
+.heading--lg   { font-size: var(--text-lg); line-height: var(--leading-snug); }
+.heading--xl   { font-size: var(--text-xl); line-height: var(--leading-snug); }
+.heading--2xl  { font-size: var(--text-2xl); }
+.heading--3xl  { font-size: var(--text-3xl); }
+
+.text--xs   { font-size: var(--text-xs); line-height: var(--leading-normal); }
+.text--sm   { font-size: var(--text-sm); line-height: var(--leading-normal); }
+.text--base { font-size: var(--text-base); line-height: var(--leading-normal); }
+.text--lg   { font-size: var(--text-lg); line-height: var(--leading-normal); }
+
+.text--muted  { color: var(--color-text-muted); }
+.text--danger { color: var(--color-danger); }

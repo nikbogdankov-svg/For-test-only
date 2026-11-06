@@ -1,0 +1,5 @@
+.comment {
+  padding: var(--space-3) 0;
+  border-top: var(--border-width) solid var(--color-border);
+}
+.comment:first-child { border-top: none; padding-top: 0; }

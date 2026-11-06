@@ -1,0 +1,87 @@
+/*
+ * Design tokens — the one place to change colors, type, spacing and shapes.
+ * Sizes follow the Tailwind scale names (text-sm, text-3xl, space-4, radius-lg…)
+ * so they line up with what design tools like Compot Tech produce.
+ */
+:root {
+  /* Colors */
+  --color-bg: #f6f5f2;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f6f5f2;
+  --color-text: #1d1d1f;
+  --color-text-muted: #6b6b70;
+  --color-border: #e3e1dc;
+  --color-accent: #2f6fde;
+  --color-accent-text: #ffffff;
+  --color-danger: #c43d3d;
+
+  /* Font families */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+
+  /* Line heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+
+  /* Font weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Spacing — 4px grid; use for padding, margin and gap */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Borders, shadows, focus */
+  --border-width: 1px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.04);
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-accent) 35%, transparent);
+
+  /* Motion */
+  --duration-fast: 120ms;
+
+  /* Layout */
+  --container-width: 720px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #151517;
+    --color-surface: #1f1f22;
+    --color-surface-sunken: #151517;
+    --color-text: #ececef;
+    --color-text-muted: #9a9aa2;
+    --color-border: #2e2e33;
+    --color-accent: #5b8ff0;
+    --color-danger: #e06666;
+    --shadow-sm: none;
+  }
+}

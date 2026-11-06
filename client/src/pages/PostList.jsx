@@ -1,22 +1,21 @@
 import { Link } from 'react-router';
 import { api } from '../api.js';
-import { formatDate, useLoad } from '../utils.js';
+import { useLoad } from '../utils.js';
+import { PostCard } from '../components/PostCard.jsx';
+import { ErrorMessage, Stack, Text } from '../components/ui';
 
 export default function PostList() {
   const { data: posts, error, loading } = useLoad(api.listPosts, []);
 
-  if (loading && !posts) return <p className="muted">Loading…</p>;
-  if (error) return <p className="error">{error.message}</p>;
+  if (loading && !posts) return <Text tone="muted">Loading…</Text>;
+  if (error) return <ErrorMessage>{error.message}</ErrorMessage>;
   if (posts.length === 0) {
-    return <p className="muted">No posts yet. <Link to="/new">Write the first one</Link>.</p>;
+    return <Text tone="muted">No posts yet. <Link to="/new">Write the first one</Link>.</Text>;
   }
 
-  return posts.map((p) => (
-    <article className="card" key={p.id}>
-      <h2><Link style={{ fontSize: "1.875rem", lineHeight: "1.2" }} to={`/post/${p.id}`}>{p.title}</Link></h2>
-      <div className="meta" style={{ fontSize: "1rem", lineHeight: "1.5" }}>by {p.author} · {formatDate(p.created_at)}</div>
-      <p>{p.excerpt}{p.excerpt.length >= 180 && '…'}</p>
-      <div className="meta">♥ {p.likes} · 💬 {p.comment_count}</div>
-    </article>
-  ));
+  return (
+    <Stack gap={4}>
+      {posts.map((post) => <PostCard key={post.id} post={post} />)}
+    </Stack>
+  );
 }

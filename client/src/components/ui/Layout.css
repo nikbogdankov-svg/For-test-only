@@ -1,0 +1,9 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-16);
+}
+
+.stack { display: flex; flex-direction: column; }
+.stack--row { flex-direction: row; align-items: center; }
+.stack--wrap { flex-wrap: wrap; }

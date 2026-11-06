@@ -1,0 +1,19 @@
+.input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-sunken);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: var(--focus-ring); }
+
+.input--multiline { min-height: 7.5rem; resize: vertical; }
+
+.field { display: grid; gap: var(--space-1); }
+.field__label { font-size: var(--text-sm); color: var(--color-text-muted); }
+.field__hint { font-size: var(--text-xs); color: var(--color-text-muted); }

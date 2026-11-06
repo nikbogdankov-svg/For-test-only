@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { api } from '../api.js';
-import { formatDate, useLoad, useSavedName } from '../utils.js';
+import { formatDate, useLoad } from '../utils.js';
+import { BackLink } from '../components/BackLink.jsx';
+import { Comment, CommentForm } from '../components/Comment.jsx';
+import { Button, Card, ErrorMessage, Heading, Meta, Stack, Text } from '../components/ui';
 
 export default function PostPage() {
   const { id } = useParams();
@@ -9,13 +12,13 @@ export default function PostPage() {
   const { data: post, error, loading, reload } = useLoad(() => api.getPost(id), [id]);
   const [liking, setLiking] = useState(false);
 
-  if (loading && !post) return <p className="muted">Loading…</p>;
+  if (loading && !post) return <Text tone="muted">Loading…</Text>;
   if (error) {
     return (
-      <>
-        <p className="error">{error.message}</p>
-        <p><Link to="/">← Back</Link></p>
-      </>
+      <Stack gap={2}>
+        <ErrorMessage>{error.message}</ErrorMessage>
+        <BackLink>Back</BackLink>
+      </Stack>
     );
   }
 
@@ -36,65 +39,32 @@ export default function PostPage() {
   }
 
   return (
-    <>
-      <p><Link to="/">← All posts</Link></p>
+    <Stack gap={4}>
+      <BackLink />
 
-      <article className="card">
-        <h2>{post.title}</h2>
-        <div className="meta">by {post.author} · {formatDate(post.created_at)}</div>
-        <p className="post-body">{post.body}</p>
-        <div className="row">
-          <button className="btn secondary" onClick={like} disabled={liking}>
-            ♥ {post.likes}
-          </button>
-          <button className="btn danger" onClick={remove}>Delete</button>
-        </div>
-      </article>
+      <Card as="article">
+        <Stack gap={3}>
+          <Stack gap={1}>
+            <Heading level={1} size="2xl">{post.title}</Heading>
+            <Meta>by {post.author} · {formatDate(post.created_at)}</Meta>
+          </Stack>
+          <Text className="pre-wrap">{post.body}</Text>
+          <Stack direction="row" gap={2} wrap>
+            <Button variant="secondary" onClick={like} disabled={liking}>♥ {post.likes}</Button>
+            <Button variant="danger" onClick={remove}>Delete</Button>
+          </Stack>
+        </Stack>
+      </Card>
 
-      <section className="card">
-        <h3>Comments ({post.comments.length})</h3>
-        {post.comments.length === 0 && <p className="muted">No comments yet.</p>}
-        {post.comments.map((c) => (
-          <div className="comment" key={c.id}>
-            <div className="meta">{c.author} · {formatDate(c.created_at)}</div>
-            <div>{c.body}</div>
-          </div>
-        ))}
-        <CommentForm postId={id} onAdded={reload} />
-      </section>
-    </>
-  );
-}
-
-function CommentForm({ postId, onAdded }) {
-  const [author, setAuthor] = useSavedName();
-  const [body, setBody] = useState('');
-  const [error, setError] = useState('');
-  const [sending, setSending] = useState(false);
-
-  async function submit(e) {
-    e.preventDefault();
-    setSending(true);
-    setError('');
-    try {
-      await api.addComment(postId, { author, body });
-      setBody('');
-      onAdded();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setSending(false);
-    }
-  }
-
-  return (
-    <form onSubmit={submit}>
-      <input value={author} onChange={(e) => setAuthor(e.target.value)}
-             placeholder="Your name" maxLength={40} required />
-      <textarea value={body} onChange={(e) => setBody(e.target.value)}
-                placeholder="Write a comment…" maxLength={1000} required />
-      <p className="error">{error}</p>
-      <div><button className="btn" disabled={sending}>Add comment</button></div>
-    </form>
+      <Card as="section">
+        <Stack gap={3}>
+          <Heading level={2} size="lg">Comments ({post.comments.length})</Heading>
+          {post.comments.length === 0
+            ? <Text tone="muted">No comments yet.</Text>
+            : <div>{post.comments.map((c) => <Comment key={c.id} comment={c} />)}</div>}
+          <CommentForm postId={id} onAdded={reload} />
+        </Stack>
+      </Card>
+    </Stack>
   );
 }

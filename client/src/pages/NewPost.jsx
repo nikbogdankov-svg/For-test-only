@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { api } from '../api.js';
 import { useSavedName } from '../utils.js';
+import { BackLink } from '../components/BackLink.jsx';
+import { Button, Card, ErrorMessage, Field, Heading, Input, Stack, Textarea } from '../components/ui';
 
 export default function NewPost() {
   const navigate = useNavigate();
@@ -25,24 +27,26 @@ export default function NewPost() {
   }
 
   return (
-    <>
-      <p><Link to="/">← All posts</Link></p>
-      <div className="card">
-        <h2>New post</h2>
-        <form onSubmit={submit}>
-          <label>Your name
-            <input value={author} onChange={(e) => setAuthor(e.target.value)} maxLength={40} required />
-          </label>
-          <label>Title
-            <input value={title} onChange={(e) => setTitle(e.target.value)} maxLength={120} required />
-          </label>
-          <label>Text
-            <textarea value={body} onChange={(e) => setBody(e.target.value)} maxLength={5000} required />
-          </label>
-          <p className="error">{error}</p>
-          <div><button className="btn" disabled={sending}>Publish</button></div>
-        </form>
-      </div>
-    </>
+    <Stack gap={4}>
+      <BackLink />
+      <Card>
+        <Stack gap={4}>
+          <Heading level={1} size="xl">New post</Heading>
+          <Stack as="form" gap={3} onSubmit={submit}>
+            <Field label="Your name">
+              <Input value={author} onChange={(e) => setAuthor(e.target.value)} maxLength={40} required />
+            </Field>
+            <Field label="Title">
+              <Input value={title} onChange={(e) => setTitle(e.target.value)} maxLength={120} required />
+            </Field>
+            <Field label="Text">
+              <Textarea value={body} onChange={(e) => setBody(e.target.value)} maxLength={5000} required />
+            </Field>
+            <ErrorMessage>{error}</ErrorMessage>
+            <div><Button type="submit" disabled={sending}>Publish</Button></div>
+          </Stack>
+        </Stack>
+      </Card>
+    </Stack>
   );
 }
