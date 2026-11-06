@@ -1,0 +1,136 @@
+{
+  "rootId": "c11",
+  "nodes": [
+    {
+      "id": "c1",
+      "parentId": "c11",
+      "order": 0,
+      "kind": "frame",
+      "name": "Header",
+      "className": "site-header",
+      "text": null,
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c2",
+      "parentId": "c1",
+      "order": 0,
+      "kind": "text",
+      "name": "Mini Blog",
+      "className": "logo",
+      "text": "Mini Blog",
+      "attrs": [
+        {
+          "name": "to",
+          "value": "/"
+        }
+      ],
+      "figmaId": null
+    },
+    {
+      "id": "c3",
+      "parentId": "c1",
+      "order": 1,
+      "kind": "text",
+      "name": "New post",
+      "className": "btn",
+      "text": "New post",
+      "attrs": [
+        {
+          "name": "to",
+          "value": "/new"
+        }
+      ],
+      "figmaId": null
+    },
+    {
+      "id": "c4",
+      "parentId": "c11",
+      "order": 1,
+      "kind": "frame",
+      "name": "Main",
+      "className": "container",
+      "text": null,
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c5",
+      "parentId": "c4",
+      "order": 0,
+      "kind": "frame",
+      "name": "Article",
+      "className": "card",
+      "text": null,
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c6",
+      "parentId": "c5",
+      "order": 0,
+      "kind": "frame",
+      "name": "Heading",
+      "className": "",
+      "text": null,
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c7",
+      "parentId": "c6",
+      "order": 0,
+      "kind": "text",
+      "name": "jkhjkh",
+      "className": "text-3xl",
+      "text": "jkhjkh",
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c8",
+      "parentId": "c5",
+      "order": 1,
+      "kind": "text",
+      "name": "by gigsjkljlk · 11/6/2026, …",
+      "className": "meta text-base",
+      "text": "by gigsjkljlk · 11/6/2026, 6:06:13 PM",
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c9",
+      "parentId": "c5",
+      "order": 2,
+      "kind": "text",
+      "name": "jhjk…",
+      "className": "",
+      "text": "jhjk…",
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c10",
+      "parentId": "c5",
+      "order": 3,
+      "kind": "text",
+      "name": "♥ 0 · 💬 0",
+      "className": "meta",
+      "text": "♥ 0 · 💬 0",
+      "attrs": [],
+      "figmaId": null
+    },
+    {
+      "id": "c11",
+      "parentId": null,
+      "order": 0,
+      "kind": "frame",
+      "name": "PostList",
+      "className": "flex flex-col",
+      "text": null,
+      "attrs": [],
+      "figmaId": null
+    }
+  ]
+}

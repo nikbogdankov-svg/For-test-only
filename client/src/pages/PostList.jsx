@@ -13,8 +13,8 @@ export default function PostList() {
 
   return posts.map((p) => (
     <article className="card" key={p.id}>
-      <h2><Link to={`/post/${p.id}`}>{p.title}</Link></h2>
-      <div className="meta">by {p.author} · {formatDate(p.created_at)}</div>
+      <h2><Link style={{ fontSize: "1.875rem", lineHeight: "1.2" }} to={`/post/${p.id}`}>{p.title}</Link></h2>
+      <div className="meta" style={{ fontSize: "1rem", lineHeight: "1.5" }}>by {p.author} · {formatDate(p.created_at)}</div>
       <p>{p.excerpt}{p.excerpt.length >= 180 && '…'}</p>
       <div className="meta">♥ {p.likes} · 💬 {p.comment_count}</div>
     </article>
