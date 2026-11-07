@@ -9,6 +9,7 @@ export default function NewPost() {
   const navigate = useNavigate();
   const [author, setAuthor] = useSavedName();
   const [title, setTitle] = useState('');
+  const [summary, setSummary] = useState('');
   const [body, setBody] = useState('');
   const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
@@ -18,7 +19,7 @@ export default function NewPost() {
     setSending(true);
     setError('');
     try {
-      const post = await api.createPost({ author, title, body });
+      const post = await api.createPost({ author, title, summary, body });
       navigate(`/post/${post.id}`);
     } catch (err) {
       setError(err.message);
@@ -38,6 +39,9 @@ export default function NewPost() {
             </Field>
             <Field label="Title">
               <Input value={title} onChange={(e) => setTitle(e.target.value)} maxLength={120} required />
+            </Field>
+            <Field label="Short summary" hint="One or two sentences about the post.">
+              <Input value={summary} onChange={(e) => setSummary(e.target.value)} maxLength={200} />
             </Field>
             <Field label="Text">
               <Textarea value={body} onChange={(e) => setBody(e.target.value)} maxLength={5000} required />

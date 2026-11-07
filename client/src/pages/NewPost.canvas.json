@@ -1,0 +1,1637 @@
+{
+  "canvas": {
+    "rootId": "c24",
+    "nodes": [
+      {
+        "id": "c1_1",
+        "parentId": "c24",
+        "order": 0,
+        "kind": "component",
+        "name": "SiteHeader",
+        "className": "",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "componentRef": {
+          "workspaceId": "ws_701b6232a277",
+          "importPath": "./components/SiteHeader.jsx",
+          "exportName": "SiteHeader",
+          "localName": "SiteHeader"
+        }
+      },
+      {
+        "id": "c4",
+        "parentId": "c24",
+        "order": 1,
+        "kind": "frame",
+        "name": "Container",
+        "className": "container",
+        "text": null,
+        "attrs": [],
+        "figmaId": null
+      },
+      {
+        "id": "c5",
+        "parentId": "c4",
+        "order": 0,
+        "kind": "frame",
+        "name": "Stack",
+        "className": "[gap:1rem] stack",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Stack",
+          "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+          "workspaceId": "ws_fa8838fbc9a6",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 964,
+          "props": [
+            {
+              "name": "as",
+              "value": "div"
+            },
+            {
+              "name": "gap",
+              "value": "4",
+              "number": true,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "set": true
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "options": [
+                "column",
+                "row"
+              ]
+            },
+            {
+              "name": "align",
+              "value": ""
+            },
+            {
+              "name": "justify",
+              "value": ""
+            },
+            {
+              "name": "wrap",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c4_2",
+        "parentId": "c5",
+        "order": 0,
+        "kind": "component",
+        "name": "BackLink",
+        "className": "",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "componentRef": {
+          "workspaceId": "ws_5b00c91e694d",
+          "importPath": "../components/BackLink.jsx",
+          "exportName": "BackLink",
+          "localName": "BackLink"
+        }
+      },
+      {
+        "id": "c8",
+        "parentId": "c5",
+        "order": 1,
+        "kind": "frame",
+        "name": "Card",
+        "className": "card",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Card",
+          "path": "components/for-test-only/client/src/components/ui/Card.jsx",
+          "workspaceId": "ws_bfcac47927d7",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1005,
+          "props": [
+            {
+              "name": "as",
+              "value": "div"
+            }
+          ]
+        }
+      },
+      {
+        "id": "c9",
+        "parentId": "c8",
+        "order": 0,
+        "kind": "frame",
+        "name": "Stack",
+        "className": "[gap:1rem] stack",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Stack",
+          "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+          "workspaceId": "ws_fa8838fbc9a6",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1020,
+          "props": [
+            {
+              "name": "as",
+              "value": "div"
+            },
+            {
+              "name": "gap",
+              "value": "4",
+              "number": true,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "set": true
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "options": [
+                "column",
+                "row"
+              ]
+            },
+            {
+              "name": "align",
+              "value": ""
+            },
+            {
+              "name": "justify",
+              "value": ""
+            },
+            {
+              "name": "wrap",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c10",
+        "parentId": "c9",
+        "order": 0,
+        "kind": "text",
+        "name": "Heading: New post",
+        "className": "heading heading--xl",
+        "text": "New post",
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Heading",
+          "path": "components/for-test-only/client/src/components/ui/Typography.jsx",
+          "workspaceId": "ws_c946867d2032",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1046,
+          "props": [
+            {
+              "name": "level",
+              "value": "1",
+              "number": true,
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "set": true
+            },
+            {
+              "name": "size",
+              "value": "xl",
+              "options": [
+                "base",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "set": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "c11",
+        "parentId": "c9",
+        "order": 1,
+        "kind": "frame",
+        "name": "Stack",
+        "className": "[gap:0.75rem] stack",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Stack",
+          "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+          "workspaceId": "ws_fa8838fbc9a6",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1104,
+          "props": [
+            {
+              "name": "as",
+              "value": "form",
+              "set": true
+            },
+            {
+              "name": "gap",
+              "value": "3",
+              "number": true,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "set": true
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "options": [
+                "column",
+                "row"
+              ]
+            },
+            {
+              "name": "align",
+              "value": ""
+            },
+            {
+              "name": "justify",
+              "value": ""
+            },
+            {
+              "name": "wrap",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c12",
+        "parentId": "c11",
+        "order": 0,
+        "kind": "frame",
+        "name": "Field",
+        "className": "field",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Field",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_4c719e716b36",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1160,
+          "props": [
+            {
+              "name": "label",
+              "value": "Your name",
+              "set": true
+            },
+            {
+              "name": "hint",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c13",
+        "parentId": "c12",
+        "order": 0,
+        "kind": "text",
+        "name": "Your name",
+        "className": "field__label",
+        "text": "Your name",
+        "attrs": [],
+        "figmaId": null
+      },
+      {
+        "id": "c14",
+        "parentId": "c12",
+        "order": 1,
+        "kind": "input",
+        "name": "Input",
+        "className": "input",
+        "text": null,
+        "attrs": [
+          {
+            "name": "value",
+            "value": ""
+          },
+          {
+            "name": "maxLength",
+            "value": "40"
+          },
+          {
+            "name": "required",
+            "value": "true"
+          }
+        ],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Input",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_93b85aab33bb",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1200,
+          "props": [
+            {
+              "name": "value",
+              "value": null,
+              "set": true
+            },
+            {
+              "name": "maxLength",
+              "value": "40",
+              "set": true,
+              "number": true
+            },
+            {
+              "name": "required",
+              "value": "true",
+              "set": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "c15",
+        "parentId": "c11",
+        "order": 1,
+        "kind": "frame",
+        "name": "Field",
+        "className": "field",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Field",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_4c719e716b36",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1326,
+          "props": [
+            {
+              "name": "label",
+              "value": "Title",
+              "set": true
+            },
+            {
+              "name": "hint",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c16",
+        "parentId": "c15",
+        "order": 0,
+        "kind": "text",
+        "name": "Title",
+        "className": "field__label",
+        "text": "Title",
+        "attrs": [],
+        "figmaId": null
+      },
+      {
+        "id": "c17",
+        "parentId": "c15",
+        "order": 1,
+        "kind": "input",
+        "name": "Input",
+        "className": "input",
+        "text": null,
+        "attrs": [
+          {
+            "name": "value",
+            "value": ""
+          },
+          {
+            "name": "maxLength",
+            "value": "120"
+          },
+          {
+            "name": "required",
+            "value": "true"
+          }
+        ],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Input",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_93b85aab33bb",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1362,
+          "props": [
+            {
+              "name": "value",
+              "value": null,
+              "set": true
+            },
+            {
+              "name": "maxLength",
+              "value": "120",
+              "set": true,
+              "number": true
+            },
+            {
+              "name": "required",
+              "value": "true",
+              "set": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "agent-1",
+        "parentId": "c11",
+        "order": 2,
+        "kind": "frame",
+        "name": "Field",
+        "className": "field",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Field",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_4c719e716b36",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1487,
+          "props": [
+            {
+              "name": "label",
+              "value": "Short summary",
+              "set": true
+            },
+            {
+              "name": "hint",
+              "value": "One or two sentences about the post.",
+              "set": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "agent-2",
+        "parentId": "agent-1",
+        "order": 0,
+        "kind": "text",
+        "name": "Short summary",
+        "className": "field__label",
+        "text": "Short summary",
+        "attrs": [],
+        "figmaId": null
+      },
+      {
+        "id": "agent-3",
+        "parentId": "agent-1",
+        "order": 1,
+        "kind": "input",
+        "name": "Input",
+        "className": "input",
+        "text": null,
+        "attrs": [
+          {
+            "name": "value",
+            "value": ""
+          },
+          {
+            "name": "maxLength",
+            "value": "200"
+          }
+        ],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Input",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_93b85aab33bb",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1575,
+          "props": [
+            {
+              "name": "value",
+              "value": null,
+              "set": true
+            },
+            {
+              "name": "maxLength",
+              "value": "200",
+              "set": true,
+              "number": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "c18_1",
+        "parentId": "agent-1",
+        "order": 2,
+        "kind": "text",
+        "name": "One or two sentences about …",
+        "className": "field__hint",
+        "text": "One or two sentences about the post.",
+        "attrs": [],
+        "figmaId": null
+      },
+      {
+        "id": "c18",
+        "parentId": "c11",
+        "order": 3,
+        "kind": "frame",
+        "name": "Field",
+        "className": "field",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Field",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_4c719e716b36",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1695,
+          "props": [
+            {
+              "name": "label",
+              "value": "Text",
+              "set": true
+            },
+            {
+              "name": "hint",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c20",
+        "parentId": "c18",
+        "order": 0,
+        "kind": "text",
+        "name": "Text",
+        "className": "field__label",
+        "text": "Text",
+        "attrs": [],
+        "figmaId": null
+      },
+      {
+        "id": "c21_2",
+        "parentId": "c18",
+        "order": 1,
+        "kind": "input",
+        "name": "Textarea",
+        "className": "input input--multiline",
+        "text": null,
+        "attrs": [
+          {
+            "name": "value",
+            "value": ""
+          },
+          {
+            "name": "maxLength",
+            "value": "5000"
+          },
+          {
+            "name": "required",
+            "value": "true"
+          }
+        ],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Textarea",
+          "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+          "workspaceId": "ws_9f78613f9a25",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1730,
+          "props": [
+            {
+              "name": "value",
+              "value": null,
+              "set": true
+            },
+            {
+              "name": "maxLength",
+              "value": "5000",
+              "set": true,
+              "number": true
+            },
+            {
+              "name": "required",
+              "value": "true",
+              "set": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "c21",
+        "parentId": "c11",
+        "order": 4,
+        "kind": "frame",
+        "name": "ErrorMessage",
+        "className": "text text--sm text--danger",
+        "text": null,
+        "attrs": [
+          {
+            "name": "role",
+            "value": "alert"
+          }
+        ],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "ErrorMessage",
+          "path": "components/for-test-only/client/src/components/ui/Typography.jsx",
+          "workspaceId": "ws_0ead0c9e439f",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1857,
+          "props": []
+        }
+      },
+      {
+        "id": "c23",
+        "parentId": "c11",
+        "order": 5,
+        "kind": "frame",
+        "name": "Stack",
+        "className": "[gap:0.5rem] stack stack--row",
+        "text": null,
+        "attrs": [],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Stack",
+          "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+          "workspaceId": "ws_fa8838fbc9a6",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1906,
+          "props": [
+            {
+              "name": "as",
+              "value": "div"
+            },
+            {
+              "name": "gap",
+              "value": "2",
+              "number": true,
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "set": true
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "options": [
+                "column",
+                "row"
+              ],
+              "set": true
+            },
+            {
+              "name": "align",
+              "value": ""
+            },
+            {
+              "name": "justify",
+              "value": ""
+            },
+            {
+              "name": "wrap",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "id": "c24_3",
+        "parentId": "c23",
+        "order": 0,
+        "kind": "button",
+        "name": "Button: Publish",
+        "className": "btn btn--primary btn--md",
+        "text": "Publish",
+        "attrs": [
+          {
+            "name": "type",
+            "value": "button"
+          }
+        ],
+        "figmaId": null,
+        "usesComponent": {
+          "name": "Button",
+          "path": "components/for-test-only/client/src/components/ui/Button.jsx",
+          "workspaceId": "ws_8e80e043e141",
+          "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+          "at": 1952,
+          "props": [
+            {
+              "name": "variant",
+              "value": "primary",
+              "options": [
+                "primary",
+                "secondary",
+                "danger"
+              ]
+            },
+            {
+              "name": "size",
+              "value": "md",
+              "options": [
+                "sm",
+                "md"
+              ]
+            },
+            {
+              "name": "to",
+              "value": ""
+            },
+            {
+              "name": "type",
+              "value": "submit",
+              "set": true
+            },
+            {
+              "name": "disabled",
+              "value": null,
+              "set": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "c24",
+        "parentId": null,
+        "order": 0,
+        "kind": "frame",
+        "name": "NewPost",
+        "className": "flex flex-col",
+        "text": null,
+        "attrs": [],
+        "figmaId": null
+      }
+    ]
+  },
+  "states": [
+    {
+      "id": "state_4fb3636ee009",
+      "name": "Sending",
+      "canvas": {
+        "rootId": "c24",
+        "nodes": [
+          {
+            "id": "c1_1",
+            "parentId": "c24",
+            "order": 0,
+            "kind": "component",
+            "name": "SiteHeader",
+            "className": "",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "componentRef": {
+              "workspaceId": "ws_701b6232a277",
+              "importPath": "./components/SiteHeader.jsx",
+              "exportName": "SiteHeader",
+              "localName": "SiteHeader"
+            }
+          },
+          {
+            "id": "c4",
+            "parentId": "c24",
+            "order": 1,
+            "kind": "frame",
+            "name": "Container",
+            "className": "container",
+            "text": null,
+            "attrs": [],
+            "figmaId": null
+          },
+          {
+            "id": "c5",
+            "parentId": "c4",
+            "order": 0,
+            "kind": "frame",
+            "name": "Stack",
+            "className": "[gap:1rem] stack",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Stack",
+              "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+              "workspaceId": "ws_fa8838fbc9a6",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 964,
+              "props": [
+                {
+                  "name": "as",
+                  "value": "div"
+                },
+                {
+                  "name": "gap",
+                  "value": "4",
+                  "number": true,
+                  "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "8"
+                  ],
+                  "set": true
+                },
+                {
+                  "name": "direction",
+                  "value": "column",
+                  "options": [
+                    "column",
+                    "row"
+                  ]
+                },
+                {
+                  "name": "align",
+                  "value": ""
+                },
+                {
+                  "name": "justify",
+                  "value": ""
+                },
+                {
+                  "name": "wrap",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c4_2",
+            "parentId": "c5",
+            "order": 0,
+            "kind": "component",
+            "name": "BackLink",
+            "className": "",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "componentRef": {
+              "workspaceId": "ws_5b00c91e694d",
+              "importPath": "../components/BackLink.jsx",
+              "exportName": "BackLink",
+              "localName": "BackLink"
+            }
+          },
+          {
+            "id": "c8",
+            "parentId": "c5",
+            "order": 1,
+            "kind": "frame",
+            "name": "Card",
+            "className": "card",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Card",
+              "path": "components/for-test-only/client/src/components/ui/Card.jsx",
+              "workspaceId": "ws_bfcac47927d7",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1005,
+              "props": [
+                {
+                  "name": "as",
+                  "value": "div"
+                }
+              ]
+            }
+          },
+          {
+            "id": "c9",
+            "parentId": "c8",
+            "order": 0,
+            "kind": "frame",
+            "name": "Stack",
+            "className": "[gap:1rem] stack",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Stack",
+              "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+              "workspaceId": "ws_fa8838fbc9a6",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1020,
+              "props": [
+                {
+                  "name": "as",
+                  "value": "div"
+                },
+                {
+                  "name": "gap",
+                  "value": "4",
+                  "number": true,
+                  "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "8"
+                  ],
+                  "set": true
+                },
+                {
+                  "name": "direction",
+                  "value": "column",
+                  "options": [
+                    "column",
+                    "row"
+                  ]
+                },
+                {
+                  "name": "align",
+                  "value": ""
+                },
+                {
+                  "name": "justify",
+                  "value": ""
+                },
+                {
+                  "name": "wrap",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c10",
+            "parentId": "c9",
+            "order": 0,
+            "kind": "text",
+            "name": "Heading: New post",
+            "className": "heading heading--xl",
+            "text": "New post",
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Heading",
+              "path": "components/for-test-only/client/src/components/ui/Typography.jsx",
+              "workspaceId": "ws_c946867d2032",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1046,
+              "props": [
+                {
+                  "name": "level",
+                  "value": "1",
+                  "number": true,
+                  "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                  ],
+                  "set": true
+                },
+                {
+                  "name": "size",
+                  "value": "xl",
+                  "options": [
+                    "base",
+                    "lg",
+                    "xl",
+                    "2xl",
+                    "3xl"
+                  ],
+                  "set": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "c11",
+            "parentId": "c9",
+            "order": 1,
+            "kind": "frame",
+            "name": "Stack",
+            "className": "[gap:0.75rem] stack",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Stack",
+              "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+              "workspaceId": "ws_fa8838fbc9a6",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1104,
+              "props": [
+                {
+                  "name": "as",
+                  "value": "form",
+                  "set": true
+                },
+                {
+                  "name": "gap",
+                  "value": "3",
+                  "number": true,
+                  "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "8"
+                  ],
+                  "set": true
+                },
+                {
+                  "name": "direction",
+                  "value": "column",
+                  "options": [
+                    "column",
+                    "row"
+                  ]
+                },
+                {
+                  "name": "align",
+                  "value": ""
+                },
+                {
+                  "name": "justify",
+                  "value": ""
+                },
+                {
+                  "name": "wrap",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c12",
+            "parentId": "c11",
+            "order": 0,
+            "kind": "frame",
+            "name": "Field",
+            "className": "field",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Field",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_4c719e716b36",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1160,
+              "props": [
+                {
+                  "name": "label",
+                  "value": "Your name",
+                  "set": true
+                },
+                {
+                  "name": "hint",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c13",
+            "parentId": "c12",
+            "order": 0,
+            "kind": "text",
+            "name": "Your name",
+            "className": "field__label",
+            "text": "Your name",
+            "attrs": [],
+            "figmaId": null
+          },
+          {
+            "id": "c14",
+            "parentId": "c12",
+            "order": 1,
+            "kind": "input",
+            "name": "Input",
+            "className": "input",
+            "text": null,
+            "attrs": [
+              {
+                "name": "value",
+                "value": ""
+              },
+              {
+                "name": "maxLength",
+                "value": "40"
+              },
+              {
+                "name": "required",
+                "value": "true"
+              }
+            ],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Input",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_93b85aab33bb",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1200,
+              "props": [
+                {
+                  "name": "value",
+                  "value": null,
+                  "set": true
+                },
+                {
+                  "name": "maxLength",
+                  "value": "40",
+                  "set": true,
+                  "number": true
+                },
+                {
+                  "name": "required",
+                  "value": "true",
+                  "set": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "c15",
+            "parentId": "c11",
+            "order": 1,
+            "kind": "frame",
+            "name": "Field",
+            "className": "field",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Field",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_4c719e716b36",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1326,
+              "props": [
+                {
+                  "name": "label",
+                  "value": "Title",
+                  "set": true
+                },
+                {
+                  "name": "hint",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c16",
+            "parentId": "c15",
+            "order": 0,
+            "kind": "text",
+            "name": "Title",
+            "className": "field__label",
+            "text": "Title",
+            "attrs": [],
+            "figmaId": null
+          },
+          {
+            "id": "c17",
+            "parentId": "c15",
+            "order": 1,
+            "kind": "input",
+            "name": "Input",
+            "className": "input",
+            "text": null,
+            "attrs": [
+              {
+                "name": "value",
+                "value": ""
+              },
+              {
+                "name": "maxLength",
+                "value": "120"
+              },
+              {
+                "name": "required",
+                "value": "true"
+              }
+            ],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Input",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_93b85aab33bb",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1362,
+              "props": [
+                {
+                  "name": "value",
+                  "value": null,
+                  "set": true
+                },
+                {
+                  "name": "maxLength",
+                  "value": "120",
+                  "set": true,
+                  "number": true
+                },
+                {
+                  "name": "required",
+                  "value": "true",
+                  "set": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "agent-1",
+            "parentId": "c11",
+            "order": 2,
+            "kind": "frame",
+            "name": "Field",
+            "className": "field",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Field",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_4c719e716b36",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1487,
+              "props": [
+                {
+                  "name": "label",
+                  "value": "Short summary",
+                  "set": true
+                },
+                {
+                  "name": "hint",
+                  "value": "One or two sentences about the post.",
+                  "set": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "agent-2",
+            "parentId": "agent-1",
+            "order": 0,
+            "kind": "text",
+            "name": "Short summary",
+            "className": "field__label",
+            "text": "Short summary",
+            "attrs": [],
+            "figmaId": null
+          },
+          {
+            "id": "agent-3",
+            "parentId": "agent-1",
+            "order": 1,
+            "kind": "input",
+            "name": "Input",
+            "className": "input",
+            "text": null,
+            "attrs": [
+              {
+                "name": "value",
+                "value": ""
+              },
+              {
+                "name": "maxLength",
+                "value": "200"
+              }
+            ],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Input",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_93b85aab33bb",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1575,
+              "props": [
+                {
+                  "name": "value",
+                  "value": null,
+                  "set": true
+                },
+                {
+                  "name": "maxLength",
+                  "value": "200",
+                  "set": true,
+                  "number": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "c18_1",
+            "parentId": "agent-1",
+            "order": 2,
+            "kind": "text",
+            "name": "One or two sentences about …",
+            "className": "field__hint",
+            "text": "One or two sentences about the post.",
+            "attrs": [],
+            "figmaId": null
+          },
+          {
+            "id": "c18",
+            "parentId": "c11",
+            "order": 3,
+            "kind": "frame",
+            "name": "Field",
+            "className": "field",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Field",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_4c719e716b36",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1695,
+              "props": [
+                {
+                  "name": "label",
+                  "value": "Text",
+                  "set": true
+                },
+                {
+                  "name": "hint",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c20",
+            "parentId": "c18",
+            "order": 0,
+            "kind": "text",
+            "name": "Text",
+            "className": "field__label",
+            "text": "Text",
+            "attrs": [],
+            "figmaId": null
+          },
+          {
+            "id": "c21_2",
+            "parentId": "c18",
+            "order": 1,
+            "kind": "input",
+            "name": "Textarea",
+            "className": "input input--multiline",
+            "text": null,
+            "attrs": [
+              {
+                "name": "value",
+                "value": ""
+              },
+              {
+                "name": "maxLength",
+                "value": "5000"
+              },
+              {
+                "name": "required",
+                "value": "true"
+              }
+            ],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Textarea",
+              "path": "components/for-test-only/client/src/components/ui/Input.jsx",
+              "workspaceId": "ws_9f78613f9a25",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1730,
+              "props": [
+                {
+                  "name": "value",
+                  "value": null,
+                  "set": true
+                },
+                {
+                  "name": "maxLength",
+                  "value": "5000",
+                  "set": true,
+                  "number": true
+                },
+                {
+                  "name": "required",
+                  "value": "true",
+                  "set": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "c21",
+            "parentId": "c11",
+            "order": 4,
+            "kind": "frame",
+            "name": "ErrorMessage",
+            "className": "text text--sm text--danger",
+            "text": null,
+            "attrs": [
+              {
+                "name": "role",
+                "value": "alert"
+              }
+            ],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "ErrorMessage",
+              "path": "components/for-test-only/client/src/components/ui/Typography.jsx",
+              "workspaceId": "ws_0ead0c9e439f",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1857,
+              "props": []
+            }
+          },
+          {
+            "id": "c23",
+            "parentId": "c11",
+            "order": 5,
+            "kind": "frame",
+            "name": "Stack",
+            "className": "[gap:0.5rem] stack stack--row",
+            "text": null,
+            "attrs": [],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Stack",
+              "path": "components/for-test-only/client/src/components/ui/Layout.jsx",
+              "workspaceId": "ws_fa8838fbc9a6",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1906,
+              "props": [
+                {
+                  "name": "as",
+                  "value": "div"
+                },
+                {
+                  "name": "gap",
+                  "value": "2",
+                  "number": true,
+                  "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "8"
+                  ],
+                  "set": true
+                },
+                {
+                  "name": "direction",
+                  "value": "row",
+                  "options": [
+                    "column",
+                    "row"
+                  ],
+                  "set": true
+                },
+                {
+                  "name": "align",
+                  "value": ""
+                },
+                {
+                  "name": "justify",
+                  "value": ""
+                },
+                {
+                  "name": "wrap",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "c24_3",
+            "parentId": "c23",
+            "order": 0,
+            "kind": "button",
+            "name": "Button: Publish",
+            "className": "btn btn--primary btn--md",
+            "text": "Publish",
+            "attrs": [
+              {
+                "name": "type",
+                "value": "button"
+              },
+              {
+                "name": "disabled",
+                "value": "true"
+              }
+            ],
+            "figmaId": null,
+            "usesComponent": {
+              "name": "Button",
+              "path": "components/for-test-only/client/src/components/ui/Button.jsx",
+              "workspaceId": "ws_8e80e043e141",
+              "file": "components/for-test-only/client/src/pages/NewPost.jsx",
+              "at": 1952,
+              "props": [
+                {
+                  "name": "variant",
+                  "value": "primary",
+                  "options": [
+                    "primary",
+                    "secondary",
+                    "danger"
+                  ]
+                },
+                {
+                  "name": "size",
+                  "value": "md",
+                  "options": [
+                    "sm",
+                    "md"
+                  ]
+                },
+                {
+                  "name": "to",
+                  "value": ""
+                },
+                {
+                  "name": "type",
+                  "value": "submit",
+                  "set": true
+                },
+                {
+                  "name": "disabled",
+                  "value": null,
+                  "set": true
+                }
+              ]
+            }
+          },
+          {
+            "id": "c24",
+            "parentId": null,
+            "order": 0,
+            "kind": "frame",
+            "name": "NewPost",
+            "className": "flex flex-col",
+            "text": null,
+            "attrs": [],
+            "figmaId": null
+          }
+        ]
+      },
+      "code": {
+        "key": "sending@632",
+        "value": true
+      }
+    }
+  ],
+  "connections": []
+}
