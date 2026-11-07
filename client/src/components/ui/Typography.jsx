@@ -18,9 +18,15 @@ export function Heading({ level = 2, size, className, ...props }) {
  *   as:   HTML tag (default <p>)
  *   size: 'xs' | 'sm' | 'base' | 'lg'
  *   tone: 'default' | 'muted' | 'danger'
+ *   preserveLines: keep the line breaks the user typed (for posts and comments)
  */
-export function Text({ as: Tag = 'p', size, tone, className, ...props }) {
-  return <Tag className={cx('text', size && `text--${size}`, tone && `text--${tone}`, className)} {...props} />;
+export function Text({ as: Tag = 'p', size, tone, preserveLines, className, ...props }) {
+  return (
+    <Tag
+      className={cx('text', size && `text--${size}`, tone && `text--${tone}`, preserveLines && 'text--pre-wrap', className)}
+      {...props}
+    />
+  );
 }
 
 // Small grey line for authors, dates and counts.

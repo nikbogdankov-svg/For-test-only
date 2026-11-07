@@ -4,3 +4,4 @@ blog.db
 .env.local
 .neon
 dist/
+.DS_Store

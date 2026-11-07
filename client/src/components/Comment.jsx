@@ -9,8 +9,18 @@ export function Comment({ comment }) {
   return (
     <div className="comment">
       <Meta>{comment.author} · {formatDate(comment.created_at)}</Meta>
-      <Text className="pre-wrap">{comment.body}</Text>
+      <Text preserveLines>{comment.body}</Text>
     </div>
+  );
+}
+
+// All comments of a post, or a note when there are none yet.
+export function CommentList({ comments }) {
+  if (comments.length === 0) return <Text tone="muted">No comments yet.</Text>;
+  return (
+    <Stack gap={0}>
+      {comments.map((c) => <Comment key={c.id} comment={c} />)}
+    </Stack>
   );
 }
 
@@ -43,7 +53,9 @@ export function CommentForm({ postId, onAdded }) {
       <Textarea value={body} onChange={(e) => setBody(e.target.value)}
                 placeholder="Write a comment…" aria-label="Comment" maxLength={1000} required />
       <ErrorMessage>{error}</ErrorMessage>
-      <div><Button type="submit" disabled={sending}>Add comment</Button></div>
+      <Stack direction="row" gap={2}>
+        <Button type="submit" disabled={sending}>Add comment</Button>
+      </Stack>
     </Stack>
   );
 }

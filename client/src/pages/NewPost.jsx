@@ -43,7 +43,9 @@ export default function NewPost() {
               <Textarea value={body} onChange={(e) => setBody(e.target.value)} maxLength={5000} required />
             </Field>
             <ErrorMessage>{error}</ErrorMessage>
-            <div><Button type="submit" disabled={sending}>Publish</Button></div>
+            <Stack direction="row" gap={2}>
+              <Button type="submit" disabled={sending}>Publish</Button>
+            </Stack>
           </Stack>
         </Stack>
       </Card>

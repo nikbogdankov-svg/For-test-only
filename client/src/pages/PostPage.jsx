@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router';
 import { api } from '../api.js';
 import { formatDate, useLoad } from '../utils.js';
 import { BackLink } from '../components/BackLink.jsx';
-import { Comment, CommentForm } from '../components/Comment.jsx';
+import { CommentForm, CommentList } from '../components/Comment.jsx';
 import { Button, Card, ErrorMessage, Heading, Meta, Stack, Text } from '../components/ui';
 
 export default function PostPage() {
@@ -48,7 +48,7 @@ export default function PostPage() {
             <Heading level={1} size="2xl">{post.title}</Heading>
             <Meta>by {post.author} · {formatDate(post.created_at)}</Meta>
           </Stack>
-          <Text className="pre-wrap">{post.body}</Text>
+          <Text preserveLines>{post.body}</Text>
           <Stack direction="row" gap={2} wrap>
             <Button variant="secondary" onClick={like} disabled={liking}>♥ {post.likes}</Button>
             <Button variant="danger" onClick={remove}>Delete</Button>
@@ -59,9 +59,7 @@ export default function PostPage() {
       <Card as="section">
         <Stack gap={3}>
           <Heading level={2} size="lg">Comments ({post.comments.length})</Heading>
-          {post.comments.length === 0
-            ? <Text tone="muted">No comments yet.</Text>
-            : <div>{post.comments.map((c) => <Comment key={c.id} comment={c} />)}</div>}
+          <CommentList comments={post.comments} />
           <CommentForm postId={id} onAdded={reload} />
         </Stack>
       </Card>
