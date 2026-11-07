@@ -18,6 +18,13 @@ function text(value, max) {
   return v.length > 0 && v.length <= max ? v : null;
 }
 
+// Validate an optional text field: empty/missing → { value: null }; too long or not text → { invalid: true }.
+function optionalText(value, max) {
+  if (value === undefined || value === null) return { value: null };
+  if (typeof value !== 'string' || value.trim().length > max) return { invalid: true };
+  return { value: value.trim() || null };
+}
+
 // Wraps async handlers so database errors become a 500 instead of crashing the server.
 const handle = (fn) => (req, res) =>
   fn(req, res).catch((err) => {
@@ -47,10 +54,14 @@ app.post('/api/posts', handle(async (req, res) => {
   const title = text(req.body.title, 120);
   const body = text(req.body.body, 5000);
   const author = text(req.body.author, 40);
+  const summary = optionalText(req.body.summary, 200);
   if (!title || !body || !author) {
     return res.status(400).json({ error: 'Title, text and name are required.' });
   }
-  res.status(201).json(await db.createPost(title, body, author));
+  if (summary.invalid) {
+    return res.status(400).json({ error: 'Summary must be 200 characters or fewer.' });
+  }
+  res.status(201).json(await db.createPost({ title, summary: summary.value, body, author }));
 }));
 
 app.delete('/api/posts/:id', handle(async (req, res) => {

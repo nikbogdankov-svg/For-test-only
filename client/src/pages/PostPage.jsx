@@ -48,6 +48,7 @@ export default function PostPage() {
             <Heading level={1} size="2xl">{post.title}</Heading>
             <Meta>by {post.author} · {formatDate(post.created_at)}</Meta>
           </Stack>
+          {post.summary && <Text size="lg" tone="muted">{post.summary}</Text>}
           <Text preserveLines>{post.body}</Text>
           <Stack direction="row" gap={2} wrap>
             <Button variant="secondary" onClick={like} disabled={liking}>♥ {post.likes}</Button>

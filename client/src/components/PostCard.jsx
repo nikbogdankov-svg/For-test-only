@@ -4,8 +4,11 @@ import { Card, Heading, Meta, Stack, Text } from './ui';
 
 const EXCERPT_LENGTH = 180;
 
-// One post in the list: title, author/date, a short excerpt and counts.
+// One post in the list: title, author/date, its summary (or the start of the text) and counts.
 export function PostCard({ post }) {
+  const preview = post.summary
+    || `${post.excerpt}${post.excerpt.length >= EXCERPT_LENGTH ? '…' : ''}`;
+
   return (
     <Card as="article">
       <Stack gap={2}>
@@ -15,7 +18,7 @@ export function PostCard({ post }) {
           </Heading>
           <Meta size="base">by {post.author} · {formatDate(post.created_at)}</Meta>
         </Stack>
-        <Text>{post.excerpt}{post.excerpt.length >= EXCERPT_LENGTH && '…'}</Text>
+        <Text>{preview}</Text>
         <Meta>♥ {post.likes} · 💬 {post.comment_count}</Meta>
       </Stack>
     </Card>

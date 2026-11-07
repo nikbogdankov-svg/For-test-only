@@ -9,6 +9,7 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS posts (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
     title      TEXT    NOT NULL,
+    summary    TEXT,
     body       TEXT    NOT NULL,
     author     TEXT    NOT NULL,
     likes      INTEGER NOT NULL DEFAULT 0,
@@ -24,21 +25,25 @@ db.exec(`
   );
 `);
 
+// Migration: databases created before the summary field existed get the column added.
+const hasSummary = db.prepare('PRAGMA table_info(posts)').all().some((c) => c.name === 'summary');
+if (!hasSummary) db.exec('ALTER TABLE posts ADD COLUMN summary TEXT');
+
 // SQLite stores "YYYY-MM-DD HH:MM:SS" (UTC); return ISO-8601 like Postgres does.
 const ISO = `strftime('%Y-%m-%dT%H:%M:%SZ', created_at) AS created_at`;
 
 const q = {
   count: db.prepare('SELECT COUNT(*) AS n FROM posts'),
   listPosts: db.prepare(`
-    SELECT p.id, p.title, p.author, p.likes,
+    SELECT p.id, p.title, p.summary, p.author, p.likes,
            strftime('%Y-%m-%dT%H:%M:%SZ', p.created_at) AS created_at,
            substr(p.body, 1, 180) AS excerpt,
            (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count
     FROM posts p
     ORDER BY p.created_at DESC, p.id DESC
   `),
-  getPost: db.prepare(`SELECT id, title, body, author, likes, ${ISO} FROM posts WHERE id = ?`),
-  createPost: db.prepare('INSERT INTO posts (title, body, author) VALUES (?, ?, ?)'),
+  getPost: db.prepare(`SELECT id, title, summary, body, author, likes, ${ISO} FROM posts WHERE id = ?`),
+  createPost: db.prepare('INSERT INTO posts (title, summary, body, author) VALUES (?, ?, ?, ?)'),
   deletePost: db.prepare('DELETE FROM posts WHERE id = ?'),
   likePost: db.prepare('UPDATE posts SET likes = likes + 1 WHERE id = ?'),
   getLikes: db.prepare('SELECT likes FROM posts WHERE id = ?'),
@@ -53,8 +58,8 @@ export default {
   async isEmpty() { return q.count.get().n === 0; },
   async listPosts() { return q.listPosts.all(); },
   async getPost(id) { return q.getPost.get(id); },
-  async createPost(title, body, author) {
-    return q.getPost.get(q.createPost.run(title, body, author).lastInsertRowid);
+  async createPost({ title, summary = null, body, author }) {
+    return q.getPost.get(q.createPost.run(title, summary, body, author).lastInsertRowid);
   },
   async deletePost(id) { q.deletePost.run(id); },
   async likePost(id) { q.likePost.run(id); return q.getLikes.get(id).likes; },

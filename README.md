@@ -74,12 +74,12 @@ The names follow Tailwind's scale, so `text-3xl` in a design tool is `--text-3xl
 |--------|----------------------------|------------------------------|
 | GET    | `/api/posts`               | List posts                   |
 | GET    | `/api/posts/:id`           | One post with its comments   |
-| POST   | `/api/posts`               | Create a post `{title, body, author}` |
+| POST   | `/api/posts`               | Create a post `{title, summary?, body, author}` (summary optional, ≤200 chars) |
 | DELETE | `/api/posts/:id`           | Delete a post (and its comments) |
 | POST   | `/api/posts/:id/like`      | Add a like                   |
 | POST   | `/api/posts/:id/comments`  | Add a comment `{author, body}` |
 
 ## Database schema
 
-- `posts` — id, title, body, author, likes, created_at
+- `posts` — id, title, summary (optional), body, author, likes, created_at
 - `comments` — id, post_id → posts.id (cascade delete), author, body, created_at

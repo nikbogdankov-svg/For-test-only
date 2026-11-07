@@ -7,6 +7,7 @@ await pool.query(`
   CREATE TABLE IF NOT EXISTS posts (
     id         SERIAL PRIMARY KEY,
     title      TEXT        NOT NULL,
+    summary    TEXT,
     body       TEXT        NOT NULL,
     author     TEXT        NOT NULL,
     likes      INTEGER     NOT NULL DEFAULT 0,
@@ -20,6 +21,9 @@ await pool.query(`
     body       TEXT        NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
   );
+
+  -- Migration: databases created before the summary field existed get the column added.
+  ALTER TABLE posts ADD COLUMN IF NOT EXISTS summary TEXT;
 `);
 
 const rows = async (sql, params) => (await pool.query(sql, params)).rows;
@@ -29,15 +33,16 @@ export default {
   name: `Postgres (${new URL(process.env.DATABASE_URL).hostname})`,
   async isEmpty() { return (await row('SELECT COUNT(*)::int AS n FROM posts')).n === 0; },
   listPosts: () => rows(`
-    SELECT p.id, p.title, p.author, p.likes, p.created_at,
+    SELECT p.id, p.title, p.summary, p.author, p.likes, p.created_at,
            substr(p.body, 1, 180) AS excerpt,
            (SELECT COUNT(*)::int FROM comments c WHERE c.post_id = p.id) AS comment_count
     FROM posts p
     ORDER BY p.created_at DESC, p.id DESC
   `),
   getPost: (id) => row('SELECT * FROM posts WHERE id = $1', [id]),
-  createPost: (title, body, author) =>
-    row('INSERT INTO posts (title, body, author) VALUES ($1, $2, $3) RETURNING *', [title, body, author]),
+  createPost: ({ title, summary = null, body, author }) =>
+    row('INSERT INTO posts (title, summary, body, author) VALUES ($1, $2, $3, $4) RETURNING *',
+      [title, summary, body, author]),
   async deletePost(id) { await pool.query('DELETE FROM posts WHERE id = $1', [id]); },
   async likePost(id) {
     return (await row('UPDATE posts SET likes = likes + 1 WHERE id = $1 RETURNING likes', [id])).likes;
